@@ -52,7 +52,7 @@ const RegistrationForm = ({isMember, setIsMember}) => {
                     setFormErrors(res.data.errors)
                 }else{
                     //redirect to dashboard
-                    navigate("/dashboard");
+                    navigate("/pizza-time/dashboard");
                     window.location.reload();
                 }
             })
