@@ -140,7 +140,7 @@ const EditExpense = () => {
                                 allDBPieSizes={allDBPieSizes}
 
                                 formErrors={formErrors}
-                                buttonValue = "ADD TO ORDER">
+                                buttonValue = "UPDATE ORDER">
                             </PizzaForm>
                         </div>
 

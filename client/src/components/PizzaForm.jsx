@@ -188,7 +188,10 @@ const PizzaForm = (props) => {
                 }
                 </div>
 
-                <input type="submit" value={buttonValue} className='btn btn-success mt-3'/>
+                <div className="d-flex">
+                    <input type="submit" value={buttonValue} className='btn btn-success mt-3'/>
+                    <NavLink to={"/pizza-time/order-summary"} className="">Cancel</NavLink>
+                    </div>
 
                 <p className="text-danger">{formErrors.order_id?.message}</p>
             </form>

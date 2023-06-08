@@ -109,12 +109,6 @@ const OrderSummary = (props) => {
 
     const purchaseHandler = (e)=>{
         e.preventDefault();
-        // for all the pizzas in the order Info pizza_id list, update the the orderStatus for each pizza to be "submitted"
-        orderInfo.pizza_id.forEach((id)=>
-            axios.put(`http://localhost:8000/api/pizzas/orderStatus/${id}`)
-                .then((res)=>console.log("axios order status update result: ", res))
-                .catch(err=>console.log("axios order status update error: ", err))
-        )
         
         axios.post("http://localhost:8000/api/orders", orderInfo)
         .then((res)=>{
@@ -122,6 +116,13 @@ const OrderSummary = (props) => {
             if(res.data.error){
                 // this means there are validation errors we need to save
                 setFormErrors(res.data.error.errors);
+                
+                // for all the pizzas in the order Info pizza_id list, update the the orderStatus for each pizza to be "submitted"
+                orderInfo.pizza_id.forEach((id)=>
+                    axios.put(`http://localhost:8000/api/pizzas/orderStatus/${id}`)
+                        .then((res)=>console.log("axios order status update result: ", res))
+                        .catch(err=>console.log("axios order status update error: ", err))
+                )
             }
             else{                         // else means there are no errors, so we can clear our the state variables to clear out the form
                 setOrderInfo({

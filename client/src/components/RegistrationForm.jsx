@@ -21,15 +21,6 @@ const RegistrationForm = ({isMember, setIsMember}) => {
 
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
-    //         .then(res=>{
-    //             console.log("cookie cleared", res)
-    //         })
-    //         .catch(err=>{
-    //             console.log("errrr clearing userToken", err)
-    //         })
-    // }, []);
 
     const changeHandler = (e)=> {
         console.log("changing the form!")
