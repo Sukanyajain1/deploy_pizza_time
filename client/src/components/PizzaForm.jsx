@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from "axios";
 
 
@@ -188,9 +189,9 @@ const PizzaForm = (props) => {
                 }
                 </div>
 
-                <div className="d-flex">
-                    <input type="submit" value={buttonValue} className='btn btn-success mt-3'/>
-                    <NavLink to={"/pizza-time/order-summary"} className="">Cancel</NavLink>
+                <div className="d-flex align-items-center justify-content-between" style={{width: "250px"}}>
+                    <input type="submit" value={buttonValue} className='btn btn-success mt-3 '/>
+                    <NavLink to={"/pizza-time/order-summary"} className='btn btn-warning mt-3'>Cancel</NavLink>
                     </div>
 
                 <p className="text-danger">{formErrors.order_id?.message}</p>
